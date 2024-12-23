@@ -1,4 +1,4 @@
-import telnetlib, getpass, sys, os, random
+import telnetlib, getpass, sys, os, random, time
 from scapy.all import *
 
 credential = ["root:toor", "root:root", "admin:1234", "admin:admin", "guest:guest"]
@@ -89,6 +89,8 @@ def main():
                             break
                         except KeyboardInterrupt:
                             sys.exit('\r\nAborted\r\n')
+
+                        time.sleep(1) # delay per ea. login attempt
     
         except KeyboardInterrupt:
             sys.exit('\r\nAborted\r\n')
